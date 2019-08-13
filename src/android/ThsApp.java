@@ -1,7 +1,7 @@
 package cn.com.ths.crash.infocollect;
-
 import android.app.Application;
 import android.content.Context;
+import android.support.multidex.MultiDex;
 
 public class ThsApp extends Application {
     private static ThsApp mInstance = null;
@@ -17,7 +17,7 @@ public class ThsApp extends Application {
         mInstance = this;
 //        if (!Constants.isDebug)
 //        {
-            CrashHandler crashHandler = CrashHandler.getInstance();
+            cn.com.ths.crash.infocollect.CrashHandler crashHandler = cn.com.ths.crash.infocollect.CrashHandler.getInstance();
             crashHandler.init(getApplicationContext());
 //        }
     }

@@ -19,8 +19,8 @@ module.exports = function(context) {
   
         if (data.indexOf(appClass) == -1) {
   
-          const result = data.replace(/<application/g, '<application android:name="' + appClass + '"');
-  
+          const result = data.replace(/<manifest/g,'<manifest xmlns:tools="http://schemas.android.com/tools"').replace(/<application/g, '<application tools:replace="android:name" android:name="' + appClass + '"');
+    
           fs.writeFile(manifestFile, result, 'utf8', function (err) {
             if (err) throw new Error('Unable to write into AndroidManifest.xml: ' + err);
           })

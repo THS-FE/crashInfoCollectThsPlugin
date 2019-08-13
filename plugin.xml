@@ -5,7 +5,7 @@
 <clobbers target="cordova.plugins.crashInfoCollectThsPlugin" />
 </js-module>
 <platform name="android">
-
+<hook type="after_plugin_install" src="scripts/afterPluginInstall.js" />
 <config-file parent="/*" target="res/xml/config.xml">
 <feature name="crashInfoCollectThsPlugin"><param name="android-package" value="cn.com.ths.crash.infocollect.crashInfoCollectThsPlugin" /></feature>
 </config-file>
